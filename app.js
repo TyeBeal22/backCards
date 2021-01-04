@@ -17,11 +17,12 @@ const orderRoutes = require('./routes/order');
 // app
 const app = express();
 
-// db
+// db {useNewUrlParser: true, useUnifiedTopology: true }
 mongoose
     .connect(process.env.DATABASE, {
         useNewUrlParser: true,
-        useCreateIndex: true
+        useCreateIndex: true,
+        useUnifiedTopology: true
     })
     .then(() => console.log('DB Connected'));
 
